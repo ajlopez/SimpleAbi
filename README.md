@@ -27,6 +27,7 @@ TBD
 
 - 0.0.1, published
 - 0.0.2, decode values, as safe integer, published
+- 0.0.3, decode bool value type, published
 
 ## Contribution
 
