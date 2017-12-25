@@ -31,3 +31,11 @@ exports['decode values with types'] = function (test) {
 	test.equal(result[3], 42);
 }
 
+exports['decode simple string value'] = function (test) {
+	var encoded = '0x' + simpleabi.encodeValues([ "hello" ]);
+	
+	var result = simpleabi.decodeValues(encoded, [ "string" ]);
+
+	test.strictEqual(result, "hello");
+}
+
