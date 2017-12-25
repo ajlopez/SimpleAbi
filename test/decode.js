@@ -39,3 +39,10 @@ exports['decode simple string value'] = function (test) {
 	test.strictEqual(result, "hello");
 }
 
+exports['decode empty string value'] = function (test) {
+	var encoded = '0x' + simpleabi.encodeValues([ "" ]);
+	
+	var result = simpleabi.decodeValues(encoded, [ "string" ]);
+
+	test.strictEqual(result, "");
+}
