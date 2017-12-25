@@ -31,6 +31,30 @@ exports['decode values with types'] = function (test) {
 	test.equal(result[3], 42);
 }
 
+exports['decode values with types with boolean true'] = function (test) {
+	var encoded = '0x' + simpleabi.encodeValues([ 1, "hello", 2, 42 ]);
+	
+	var result = simpleabi.decodeValues(encoded, [ "bool", "string", "uint256", "uint256" ]);
+	
+	test.equal(result.length, 4);
+	test.strictEqual(result[0], true);
+	test.strictEqual(result[1], "hello");
+	test.strictEqual(result[2], 2);
+	test.strictEqual(result[3], 42);
+}
+
+exports['decode values with types with boolean false'] = function (test) {
+	var encoded = '0x' + simpleabi.encodeValues([ 0, "hello", 2, 42 ]);
+	
+	var result = simpleabi.decodeValues(encoded, [ "bool", "string", "uint256", "uint256" ]);
+	
+	test.equal(result.length, 4);
+	test.strictEqual(result[0], false);
+	test.strictEqual(result[1], "hello");
+	test.strictEqual(result[2], 2);
+	test.strictEqual(result[3], 42);
+}
+
 exports['decode simple string value'] = function (test) {
 	var encoded = '0x' + simpleabi.encodeValues([ "hello" ]);
 	
