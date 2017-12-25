@@ -39,6 +39,16 @@ exports['decode simple string value'] = function (test) {
 	test.strictEqual(result, "hello");
 }
 
+exports['decode long string value'] = function (test) {
+	var str = "this is a very long string with more than 32 characters";
+	
+	var encoded = '0x' + simpleabi.encodeValues([ str ]);
+	
+	var result = simpleabi.decodeValues(encoded, [ "string" ]);
+
+	test.strictEqual(result, str);
+}
+
 exports['decode empty string value'] = function (test) {
 	var encoded = '0x' + simpleabi.encodeValues([ "" ]);
 	
