@@ -34,7 +34,7 @@ exports['encode string'] = function (test) {
     test.ok(result);
     test.equal(typeof result, 'string');
     test.equal(result.length, 64 * 2);
-    test.equal(result, '0000000000000000000000000000000000000000000000000000000000000005' + Buffer.from('hello').toString('hex') + '000000000000000000000000000000000000000000000000000000');
+    test.equal(result, '0000000000000000000000000000000000000000000000000000000000000005' + simpleabi.stringToBuffer('hello').toString('hex') + '000000000000000000000000000000000000000000000000000000');
 };
 
 exports['encode hexadecimal string'] = function (test) {
@@ -47,7 +47,7 @@ exports['encode hexadecimal string'] = function (test) {
 };
 
 exports['encode bytes'] = function (test) {
-    var bytes = Buffer.from('123456', 'hex');
+    var bytes = simpleabi.stringToBuffer('123456', 'hex');
     var result = simpleabi.encodeValue(bytes);
     
     test.ok(result);
