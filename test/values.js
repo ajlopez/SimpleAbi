@@ -44,6 +44,21 @@ exports['encode numeric string value as string'] = function (test) {
 		+ '3432000000000000000000000000000000000000000000000000000000000000');
 };
 
+exports['encode two numeric strings value as string'] = function (test) {
+    var result = simpleabi.encodeValues([ "42", "1" ], [ 'string', 'string' ]);
+    
+    test.ok(result);
+    test.equal(typeof result, 'string');
+    test.equal(result.length, 64 * 6);
+    test.equal(result, 
+		  '0000000000000000000000000000000000000000000000000000000000000040'
+		+ '0000000000000000000000000000000000000000000000000000000000000080'
+		+ '0000000000000000000000000000000000000000000000000000000000000002'
+		+ '3432000000000000000000000000000000000000000000000000000000000000'
+		+ '0000000000000000000000000000000000000000000000000000000000000001'
+		+ '3100000000000000000000000000000000000000000000000000000000000000');
+};
+
 exports['encode hexadecimal string as bytes'] = function (test) {
     var result = simpleabi.encodeValues([ '0x123456' ], [ 'bytes' ]);
     
