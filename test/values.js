@@ -44,6 +44,16 @@ exports['encode numeric string value as string'] = function (test) {
 		+ '3432000000000000000000000000000000000000000000000000000000000000');
 };
 
+exports['encode numeric string value as unsigned integer'] = function (test) {
+    var result = simpleabi.encodeValues([ "42" ], [ 'uint256' ]);
+    
+    test.ok(result);
+    test.equal(typeof result, 'string');
+    test.equal(result.length, 64);
+    test.equal(result, 
+		  '000000000000000000000000000000000000000000000000000000000000002a');
+};
+
 exports['encode two numeric strings value as string'] = function (test) {
     var result = simpleabi.encodeValues([ "42", "1" ], [ 'string', 'string' ]);
     
