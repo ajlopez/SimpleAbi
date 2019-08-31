@@ -65,6 +65,15 @@ exports['encode bytes'] = function (test) {
     test.equal(result, '00000000000000000000000000000000000000000000000000000000000000031234560000000000000000000000000000000000000000000000000000000000');
 };
 
+exports['encode hexadecimal string as bytes'] = function (test) {
+    var result = simpleabi.encodeValue('0x123456', 'bytes');
+    
+    test.ok(result);
+    test.equal(typeof result, 'string');
+    test.equal(result.length, 64 * 2);
+    test.equal(result, '00000000000000000000000000000000000000000000000000000000000000031234560000000000000000000000000000000000000000000000000000000000');
+};
+
 exports['encode integer array'] = function (test) {
     var result = simpleabi.encodeValue([ 1, 2, 3 ]);
     
