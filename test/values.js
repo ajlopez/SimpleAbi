@@ -22,6 +22,18 @@ exports['encode string value'] = function (test) {
 		+ simpleabi.stringToBuffer('hello').toString('hex') + '000000000000000000000000000000000000000000000000000000');
 };
 
+exports['encode hexadecimal string as bytes'] = function (test) {
+    var result = simpleabi.encodeValues([ '0x123456' ], [ 'bytes' ]);
+    
+    test.ok(result);
+    test.equal(typeof result, 'string');
+    test.equal(result.length, 64 * 3);
+    test.equal(result, 
+		'0000000000000000000000000000000000000000000000000000000000000020'
+		+ '0000000000000000000000000000000000000000000000000000000000000003'
+		+ '1234560000000000000000000000000000000000000000000000000000000000');
+};
+
 exports['encode two string value'] = function (test) {
     var result = simpleabi.encodeValues([ "hello", "world" ]);
     
