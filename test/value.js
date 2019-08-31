@@ -10,6 +10,15 @@ exports['encode integer'] = function (test) {
     test.equal(result, '000000000000000000000000000000000000000000000000000000000000002a');
 };
 
+exports['encode simple string as integer'] = function (test) {
+    var result = simpleabi.encodeValue('42');
+    
+    test.ok(result);
+    test.equal(typeof result, 'string');
+    test.equal(result.length, 64);
+    test.equal(result, '000000000000000000000000000000000000000000000000000000000000002a');
+};
+
 exports['encode negative integer'] = function (test) {
     var result = simpleabi.encodeValue(-1);
     
