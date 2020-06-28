@@ -1,17 +1,30 @@
-{ "name": "simpleabi"
-, "description": "Simple ABI encoding/decoding for Ethereum contracts"
-, "keywords": [ "abi", "ethereum", "encoding", "decoding", "web3" ]
-, "version": "0.0.5"
-, "author": "Angel 'Java' Lopez <webmaster@ajlopez.com> (http://www.ajlopez.com)"
-, "repository": { "type": "git", "url": "git://github.com/ajlopez/SimpleAbi.git" }
-, "main": "./lib/simpleabi.js"
-, "engines": { "node": ">= 0.12.0" }
-, "scripts": {
+{
+  "name": "simpleabi",
+  "description": "Simple ABI encoding/decoding for Ethereum contracts",
+  "keywords": [
+    "abi",
+    "ethereum",
+    "encoding",
+    "decoding",
+    "web3"
+  ],
+  "version": "0.0.5",
+  "author": "Angel 'Java' Lopez <webmaster@ajlopez.com> (http://www.ajlopez.com)",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ajlopez/SimpleAbi.git"
+  },
+  "main": "./lib/simpleabi.js",
+  "engines": {
+    "node": ">= 0.12.0"
+  },
+  "scripts": {
     "test": "simpleunit -r ./test"
-  }
-, "dependencies": {
-  }
-, "devDependencies": {
+  },
+  "dependencies": {
+    "bn.js": "^5.1.2"
+  },
+  "devDependencies": {
     "simpleunit": "0.0.8"
   }
 }

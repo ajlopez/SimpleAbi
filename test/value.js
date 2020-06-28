@@ -19,6 +19,15 @@ exports['encode simple string as integer'] = function (test) {
     test.equal(result, '000000000000000000000000000000000000000000000000000000000000002a');
 };
 
+exports['encode long string as integer'] = function (test) {
+    var result = simpleabi.encodeValue('10000000000000000000001');
+    
+    test.ok(result);
+    test.equal(typeof result, 'string');
+    test.equal(result.length, 64);
+    test.equal(result, '00000000000000000000000000000000000000000000021e19e0c9bab2400001');
+};
+
 exports['encode negative integer'] = function (test) {
     var result = simpleabi.encodeValue(-1);
     
