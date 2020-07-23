@@ -21,7 +21,7 @@ exports['encode function call without arguments'] = function (test) {
 };
 
 exports['encode call with integer values'] = function (test) {
-    var result = simpleabi.encodeCall('add(uint256,uint256,uint256)', [ 1, 2, 3 ]);
+    const result = simpleabi.encodeCall('add(uint256,uint256,uint256)', [ 1, 2, 3 ]);
     
     test.ok(result);
     test.equal(typeof result, 'string');
@@ -32,7 +32,7 @@ exports['encode call with integer values'] = function (test) {
 };
 
 exports['encode call with string value'] = function (test) {
-    var result = simpleabi.encodeCall('setMessage(string)', [ "hello" ]);
+    const result = simpleabi.encodeCall('setMessage(string)', [ "hello" ]);
     
     test.ok(result);
     test.equal(typeof result, 'string');
@@ -45,7 +45,7 @@ exports['encode call with string value'] = function (test) {
 };
 
 exports['encode call with hexadecimal string value'] = function (test) {
-    var result = simpleabi.encodeCall('setManager(address)', [ "0x01020304" ]);
+    const result = simpleabi.encodeCall('setManager(address)', [ "0x01020304" ]);
     
     test.ok(result);
     test.equal(typeof result, 'string');
@@ -56,7 +56,7 @@ exports['encode call with hexadecimal string value'] = function (test) {
 };
 
 exports['encode call with numeric string value as string'] = function (test) {
-    var result = simpleabi.encodeCall('setMessage(string)', [ "42" ]);
+    const result = simpleabi.encodeCall('setMessage(string)', [ "42" ]);
     
     test.ok(result);
     test.equal(typeof result, 'string');
@@ -69,7 +69,7 @@ exports['encode call with numeric string value as string'] = function (test) {
 };
 
 exports['encode call with numeric string value as unsigned integer'] = function (test) {
-    var result = simpleabi.encodeCall('add(uint256)', [ "42" ]);
+    const result = simpleabi.encodeCall('add(uint256)', [ "42" ]);
     
     test.ok(result);
     test.equal(typeof result, 'string');
@@ -80,7 +80,7 @@ exports['encode call with numeric string value as unsigned integer'] = function 
 };
 
 exports['encode call with two numeric strings value as string'] = function (test) {
-    var result = simpleabi.encodeCall('process(string,string)', [ "42", "1" ]);
+    const result = simpleabi.encodeCall('process(string,string)', [ "42", "1" ]);
     
     test.ok(result);
     test.equal(typeof result, 'string');
@@ -96,7 +96,7 @@ exports['encode call with two numeric strings value as string'] = function (test
 };
 
 exports['encode hexadecimal string as bytes'] = function (test) {
-    var result = simpleabi.encodeCall('process(bytes)', [ '0x123456' ]);
+    const result = simpleabi.encodeCall('process(bytes)', [ '0x123456' ]);
     
     test.ok(result);
     test.equal(typeof result, 'string');
@@ -109,7 +109,7 @@ exports['encode hexadecimal string as bytes'] = function (test) {
 };
 
 exports['encode call with two string value'] = function (test) {
-    var result = simpleabi.encodeCall('process(string,string)', [ "hello", "world" ]);
+    const result = simpleabi.encodeCall('process(string,string)', [ "hello", "world" ]);
     
     test.ok(result);
     test.equal(typeof result, 'string');
