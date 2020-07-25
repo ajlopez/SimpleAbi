@@ -1,8 +1,8 @@
 
-var simpleabi = require('..');
+const simpleabi = require('..');
 
 exports['encode integer values'] = function (test) {
-    var result = simpleabi.encodeValues([ 1, 2, 3 ]);
+    const result = simpleabi.encodeValues([ 1, 2, 3 ]);
     
     test.ok(result);
     test.equal(typeof result, 'string');
@@ -11,7 +11,7 @@ exports['encode integer values'] = function (test) {
 };
 
 exports['encode string value'] = function (test) {
-    var result = simpleabi.encodeValues([ "hello" ]);
+    const result = simpleabi.encodeValues([ "hello" ]);
     
     test.ok(result);
     test.equal(typeof result, 'string');
@@ -23,7 +23,7 @@ exports['encode string value'] = function (test) {
 };
 
 exports['encode hexadecimal string value'] = function (test) {
-    var result = simpleabi.encodeValues([ "0x01020304" ]);
+    const result = simpleabi.encodeValues([ "0x01020304" ]);
     
     test.ok(result);
     test.equal(typeof result, 'string');
@@ -33,7 +33,7 @@ exports['encode hexadecimal string value'] = function (test) {
 };
 
 exports['encode numeric string value as string'] = function (test) {
-    var result = simpleabi.encodeValues([ "42" ], [ 'string' ]);
+    const result = simpleabi.encodeValues([ "42" ], [ 'string' ]);
     
     test.ok(result);
     test.equal(typeof result, 'string');
@@ -45,7 +45,7 @@ exports['encode numeric string value as string'] = function (test) {
 };
 
 exports['encode numeric string value as unsigned integer'] = function (test) {
-    var result = simpleabi.encodeValues([ "42" ], [ 'uint256' ]);
+    const result = simpleabi.encodeValues([ "42" ], [ 'uint256' ]);
     
     test.ok(result);
     test.equal(typeof result, 'string');
@@ -55,7 +55,7 @@ exports['encode numeric string value as unsigned integer'] = function (test) {
 };
 
 exports['encode two numeric strings value as string'] = function (test) {
-    var result = simpleabi.encodeValues([ "42", "1" ], [ 'string', 'string' ]);
+    const result = simpleabi.encodeValues([ "42", "1" ], [ 'string', 'string' ]);
     
     test.ok(result);
     test.equal(typeof result, 'string');
@@ -70,7 +70,7 @@ exports['encode two numeric strings value as string'] = function (test) {
 };
 
 exports['encode hexadecimal string as bytes'] = function (test) {
-    var result = simpleabi.encodeValues([ '0x123456' ], [ 'bytes' ]);
+    const result = simpleabi.encodeValues([ '0x123456' ], [ 'bytes' ]);
     
     test.ok(result);
     test.equal(typeof result, 'string');
@@ -82,7 +82,7 @@ exports['encode hexadecimal string as bytes'] = function (test) {
 };
 
 exports['encode two string value'] = function (test) {
-    var result = simpleabi.encodeValues([ "hello", "world" ]);
+    const result = simpleabi.encodeValues([ "hello", "world" ]);
     
     test.ok(result);
     test.equal(typeof result, 'string');
@@ -95,3 +95,4 @@ exports['encode two string value'] = function (test) {
 		+ '0000000000000000000000000000000000000000000000000000000000000005'
 		+ simpleabi.stringToBuffer('world').toString('hex') + '000000000000000000000000000000000000000000000000000000');
 };
+
