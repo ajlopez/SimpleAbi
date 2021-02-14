@@ -80,3 +80,16 @@ exports['decode empty string value'] = function (test) {
 
 	test.strictEqual(result, "");
 }
+
+exports['decode bytes value'] = function (test) {
+	const encoded = '0x' + simpleabi.encodeValues([ "0x010203" ], [ "bytes" ]);
+	
+	const result = simpleabi.decodeValues(encoded, [ "bytes" ]);
+    
+    test.ok(result);
+    test.ok(result instanceof Buffer);
+    test.equal(result.length, 3);
+
+	test.strictEqual(result.toString('hex'), '010203');
+}
+
