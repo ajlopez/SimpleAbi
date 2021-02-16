@@ -33,6 +33,10 @@ TBD
 - 0.0.6, using big number to encode big integers as hexadecimal
 - 0.0.7, decode bytes value
 
+## License
+
+MIT
+
 ## Contribution
 
 Feel free to [file issues](https://github.com/ajlopez/SimpleAbi) and submit
