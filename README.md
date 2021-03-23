@@ -32,6 +32,7 @@ TBD
 - 0.0.5, encode function signature
 - 0.0.6, using big number to encode big integers as hexadecimal
 - 0.0.7, decode bytes value
+- 0.0.8, fixing bytes32 decode
 
 ## License
 
