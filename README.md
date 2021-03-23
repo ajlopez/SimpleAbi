@@ -37,6 +37,10 @@ TBD
 
 MIT
 
+## To Do
+
+- bytes4, ..., bytes32 encode decode
+
 ## Contribution
 
 Feel free to [file issues](https://github.com/ajlopez/SimpleAbi) and submit

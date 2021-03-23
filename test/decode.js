@@ -93,3 +93,11 @@ exports['decode bytes value'] = function (test) {
 	test.strictEqual(result.toString('hex'), '010203');
 }
 
+exports['decode simple bytes32 value'] = function (test) {
+	const encoded = '0x123456789abcdef0123456789abcdef0123456789abcdef0';
+	
+	const result = simpleabi.decodeValues(encoded, [ "bytes32" ]);
+
+	test.strictEqual(result, '0x123456789abcdef0123456789abcdef0123456789abcdef0');
+}
+
