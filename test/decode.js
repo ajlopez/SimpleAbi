@@ -101,3 +101,11 @@ exports['decode simple bytes32 value'] = function (test) {
 	test.strictEqual(result, '0x123456789abcdef0123456789abcdef0123456789abcdef0');
 }
 
+exports['decode simple bytes<n> value'] = function (test) {
+	const encoded = '0x123456789abcdef0123456789abcdef0123456789abcdef0';
+
+    for (let k = 1; k <= 32; k++) {
+        const result = simpleabi.decodeValues(encoded, [ "bytes" + k ]);        
+        test.strictEqual(result, encoded.substring(0, 2 + k * 2));
+    }
+}
