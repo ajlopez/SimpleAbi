@@ -109,6 +109,20 @@ exports['encode number as bytes<n>'] = function (test) {
     }
 };
 
+exports['encode hexadecimal number as bytes<n>'] = function (test) {
+	const value = 0x1234;
+    
+    for (let k = 2; k <= 32; k++) {
+        const result = simpleabi.encodeValues([ value ], [ 'bytes' + k ]);
+        
+        test.ok(result);
+        test.equal(typeof result, 'string');
+        test.equal(result.length, 64);
+        test.equal(result, 
+            ('1234' + '00000000000000000000000000000000000000000000000000000000000000000000').substring(0, 64));
+    }
+};
+
 exports['encode two string value'] = function (test) {
     const result = simpleabi.encodeValues([ "hello", "world" ]);
     
