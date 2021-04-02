@@ -81,6 +81,20 @@ exports['encode hexadecimal string as bytes'] = function (test) {
 		+ '1234560000000000000000000000000000000000000000000000000000000000');
 };
 
+exports['encode hexadecimal string as bytes<n>'] = function (test) {
+	const value = '0x123456789abcdef0123456789abcdef0123456789abcdef0';
+    
+    for (let k = 1; k <= 32; k++) {
+        const result = simpleabi.encodeValues([ value ], [ 'bytes' + k ]);
+        
+        test.ok(result);
+        test.equal(typeof result, 'string');
+        test.equal(result.length, 64);
+        test.equal(result, 
+            (value.substring(2, 2 + k * 2) + '00000000000000000000000000000000000000000000000000000000000000000000').substring(0, 64));
+    }
+};
+
 exports['encode two string value'] = function (test) {
     const result = simpleabi.encodeValues([ "hello", "world" ]);
     
