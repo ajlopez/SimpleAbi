@@ -18,6 +18,8 @@ TBD
 
 - [Diving Into The Ethereum VM Part IV — How To Decipher A Smart Contract Method Call](https://medium.com/@hayeah/how-to-decipher-a-smart-contract-method-call-8ee980311603)
 - [ethereumjs-abi: Decoder and encoder for the Ethereum ABI](https://github.com/ethereumjs/ethereumjs-abi)
+- [JavaScript Typed Arrays](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays)
+- [Hex String to ArrayBuffer](https://gist.github.com/don/871170d88cf6b9007f7663fdbc23fe09)
 
 ## Samples
 
